@@ -10,9 +10,11 @@ import UIKit
 class CoursesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    
     private var courses = [Course]()
     private var courseUrl: String?
     private var courseName: String?
+    private let coursesUrlString = "https://swiftbook.ru/wp-content/uploads/api/api_courses"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,25 +24,12 @@ class CoursesViewController: UIViewController {
     }
     
     func fetchData() {
-        let urlString = "https://swiftbook.ru/wp-content/uploads/api/api_courses"
-        
-        guard let url = URL(string: urlString) else { return }
-        
-        let session = URLSession.shared
-        
-        session.dataTask(with: url) { data, response, error in
-            guard let data = data else { return }
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            do {
-                self.courses = try decoder.decode([Course].self, from: data)
-                DispatchQueue.main.sync {
-                    self.tableView.reloadData()
-                }
-            } catch let error {
-                print(String(describing: error))
+        NetworkManager.fetchData(withURL: coursesUrlString) { courses in
+            self.courses = courses
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
-        }.resume()
+        }
     }
     
     func configure(cell: TableViewCell, indexPath: IndexPath) {
@@ -95,6 +84,7 @@ extension CoursesViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let course = courses[indexPath.row]
+    
         courseUrl = course.link
         courseName = course.name
         
