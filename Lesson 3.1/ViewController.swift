@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var downloadImage: UIButton!
     @IBOutlet weak var getRequest: UIButton!
     @IBOutlet weak var postRequest: UIButton!
+    @IBOutlet weak var courses: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +69,7 @@ class ViewController: UIViewController {
         downloadImage.layer.cornerRadius = cornerRadius
         getRequest.layer.cornerRadius = cornerRadius
         postRequest.layer.cornerRadius = cornerRadius
+        courses.layer.cornerRadius = cornerRadius
     }
 
 }
