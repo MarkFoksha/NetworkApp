@@ -20,7 +20,7 @@ class DataProvider: NSObject {
     }()
     
     func startDownload() {
-        if let url = URL(string: "https://speed.hetzner.de/100MB.bin") {
+        if let url = URL(string: "https://ash-speed.hetzner.com/100MB.bin") {
             downloadTask = bgSession.downloadTask(with: url)
             downloadTask.earliestBeginDate = Date().addingTimeInterval(3)
             downloadTask.countOfBytesClientExpectsToSend = 512
@@ -57,9 +57,9 @@ extension DataProvider: URLSessionDownloadDelegate {
     }
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
-        guard totalBytesExpectedToWrite == NSURLSessionTransferSizeUnknown else { return }
+        //guard totalBytesExpectedToWrite == NSURLSessionTransferSizeUnknown else { return }
         
-        let progress = Double(totalBytesWritten / totalBytesExpectedToWrite)
+        let progress = Double(totalBytesWritten) / Double(totalBytesExpectedToWrite)
         
         print("Download progress \(progress)")
         

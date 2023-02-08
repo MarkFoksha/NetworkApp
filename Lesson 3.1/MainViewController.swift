@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 private let reuseIdentifier = "Cell"
 private let getPostUrlString = "https://jsonplaceholder.typicode.com/posts"
@@ -23,9 +24,55 @@ enum Actions: String, CaseIterable {
 class MainViewController: UICollectionViewController {
     
     let actions = Actions.allCases
+    private var alert: UIAlertController!
+    private let dataProvider = DataProvider()
+    private var fileLocation: String?
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        registerForNotification()
+        
+        dataProvider.fileLocation = { location in
+            print("Download finished \(location.absoluteString)")
+            self.fileLocation = location.absoluteString
+            self.postNotification()
+            self.alert.dismiss(animated: false)
+        }
+    }
+    
+    func showAlert() {
+        alert = UIAlertController(title: "Downloading...", message: "0%", preferredStyle: .alert)
+        let height = alert.view.heightAnchor.constraint(equalToConstant: 170)
+        alert.view.addConstraint(height)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) {_ in
+            self.dataProvider.stopDownload()
+        }
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true) {
+            let size = CGSize(width: 40, height: 40)
+            let point = CGPoint(x: self.alert.view.frame.width / 2 - size.width / 2, y: self.alert.view.frame.height / 2 - size.height / 2)
+            
+            let activityIndicator = UIActivityIndicatorView(frame: CGRect(origin: point, size: size))
+            activityIndicator.startAnimating()
+            
+            let progressView = UIProgressView(frame: CGRect(x: 0, y: self.alert.view.frame.height - 44, width: self.alert.view.frame.width, height: 0))
+            
+            self.dataProvider.onProgress = { progress in
+                progressView.progress = Float(progress)
+                self.alert.message = String(Int(progress*100)) + "%"
+            }
+            
+            self.alert.view.addSubview(activityIndicator)
+            self.alert.view.addSubview(progressView)
+        }
+    }
     
 
-// MARK: UICollectionViewDataSource
+// MARK: - UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return actions.count
@@ -56,7 +103,29 @@ class MainViewController: UICollectionViewController {
         case .uploadImage:
             NetworkManager.uploadImage(withURL: uploadImageUrl)
         case .downloadFile:
-            print(action.rawValue )
+            showAlert()
+            dataProvider.startDownload()
         }
+    }
+}
+
+extension MainViewController {
+    private func registerForNotification() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { _, _ in
+            
+            
+        }
+    }
+    
+    private func postNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "Download complete!"
+        content.body = "Your download has finished. File path: \(fileLocation ?? "error")"
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "TransferComplete", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
 }
