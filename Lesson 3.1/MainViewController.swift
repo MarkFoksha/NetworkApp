@@ -9,6 +9,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 private let getPostUrlString = "https://jsonplaceholder.typicode.com/posts"
+private let uploadImageUrl = "https://api.imgur.com/3/image"
 
 enum Actions: String, CaseIterable {
     case downloadImage = "Download image"
@@ -16,6 +17,7 @@ enum Actions: String, CaseIterable {
     case post = "POST"
     case ourCourses = "Our Courses"
     case uploadImage = "Upload image"
+    case downloadFile = "Download file"
 }
 
 class MainViewController: UICollectionViewController {
@@ -52,7 +54,9 @@ class MainViewController: UICollectionViewController {
         case .ourCourses:
             performSegue(withIdentifier: "ourCourses", sender: self)
         case .uploadImage:
-            print("Upload image")
+            NetworkManager.uploadImage(withURL: uploadImageUrl)
+        case .downloadFile:
+            print(action.rawValue )
         }
     }
 }
