@@ -16,12 +16,7 @@ class CoursesViewController: UIViewController {
     private var courseName: String?
     private let coursesUrlString = "https://swiftbook.ru/wp-content/uploads/api/api_courses"
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        fetchData()
-        // Do any additional setup after loading the view.
-    }
     
     func fetchData() {
         NetworkManager.fetchData(withURL: coursesUrlString) { courses in
