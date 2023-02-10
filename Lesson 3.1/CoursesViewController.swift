@@ -27,6 +27,10 @@ class CoursesViewController: UIViewController {
         }
     }
     
+    func fetchDataWithAlamofire() {
+        AlamofireNetworkRequest.sendRequest(withURL: coursesUrlString)
+    }
+    
     func configure(cell: TableViewCell, indexPath: IndexPath) {
         let course = courses[indexPath.row]
         cell.nameOfCourse.text = course.name

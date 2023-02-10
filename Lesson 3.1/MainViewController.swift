@@ -120,7 +120,7 @@ class MainViewController: UICollectionViewController {
         case "ourCourses":
             coursesVC?.fetchData()
         case "ourCoursesWithAlamofire":
-            print("Hello")
+            coursesVC?.fetchDataWithAlamofire()
         default:
             break
         }

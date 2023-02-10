@@ -9,9 +9,12 @@ import Foundation
 import Alamofire
 
 class AlamofireNetworkRequest {
-    static func sendRequest(with url: String) {
+    static func sendRequest(withURL url: String) {
         guard let url = URL(string: url) else { return}
         
+        AF.request(url).responseJSON { response in
+            print(response)
+        }
         
     }
 }
