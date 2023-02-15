@@ -28,17 +28,24 @@ class CoursesViewController: UIViewController {
     }
     
     func fetchDataWithAlamofire() {
-        AlamofireNetworkRequest.sendRequest(withURL: coursesUrlString)
+        AlamofireNetworkRequest.sendRequest(withURL: coursesUrlString) { courses in
+            self.courses = courses
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     func configure(cell: TableViewCell, indexPath: IndexPath) {
         let course = courses[indexPath.row]
         cell.nameOfCourse.text = course.name
-        cell.numberOfLessons.text = "Number of lessons: \(course.numberOfLessons)"
-        cell.numberOfTests.text = "Number of tests: \(course.numberOfTests)"
+        cell.numberOfLessons.text = "Number of lessons: \(course.numberOfLessons ?? 0)"
+        cell.numberOfTests.text = "Number of tests: \(course.numberOfTests ?? 0)"
         
         DispatchQueue.global().async {
-            guard let imageUrl = URL(string: course.imageUrl) else { return }
+            guard let stringURL = course.imageUrl else { return }
+            
+            guard let imageUrl = URL(string: stringURL) else { return }
             guard let data = try? Data(contentsOf: imageUrl) else { return }
             
             DispatchQueue.main.async {

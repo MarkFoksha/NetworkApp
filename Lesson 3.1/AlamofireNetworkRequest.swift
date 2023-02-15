@@ -8,13 +8,19 @@
 import Foundation
 import Alamofire
 
-class AlamofireNetworkRequest {
-    static func sendRequest(withURL url: String) {
+class AlamofireNetworkRequest: Codable {
+    static func sendRequest(withURL url: String, completion: @escaping ([Course]) -> ()) {
         guard let url = URL(string: url) else { return}
         
-        AF.request(url).responseJSON { response in
-            print(response)
+        AF.request(url).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                var courses = [Course]()
+                courses = Course.getArray(from: value)!
+                completion(courses)
+            case .failure(let error): print(error)
+            }
+            
         }
-        
     }
 }

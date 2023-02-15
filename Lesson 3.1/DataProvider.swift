@@ -14,13 +14,13 @@ class DataProvider: NSObject {
     
     private lazy var bgSession: URLSession = {
         let config = URLSessionConfiguration.background(withIdentifier: "hm.Lesson-3-1")
-//        config.isDiscretionary = true
+        config.isDiscretionary = true
         config.sessionSendsLaunchEvents = true
         return URLSession(configuration: config, delegate: self, delegateQueue: nil)
     }()
     
     func startDownload() {
-        if let url = URL(string: "https://ash-speed.hetzner.com/100MB.bin") {
+        if let url = URL(string: "https://speedtest.selectel.ru/10MB") {
             downloadTask = bgSession.downloadTask(with: url)
             downloadTask.earliestBeginDate = Date().addingTimeInterval(3)
             downloadTask.countOfBytesClientExpectsToSend = 512
