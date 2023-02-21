@@ -161,27 +161,47 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="eUa-lG-rYQ">
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCQ-26-BBq">
+                                <rect key="frame" x="100" y="546.5" width="214" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hsa-fn-jlb">
+                                <rect key="frame" x="132" y="587" width="150" height="4"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="TeJ-3L-tuy"/>
+                                </constraints>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4RR-G3-CNT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="eUa-lG-rYQ" firstAttribute="centerX" secondItem="Hod-xY-oPi" secondAttribute="centerX" id="Biy-IO-Lov"/>
+                            <constraint firstItem="cCQ-26-BBq" firstAttribute="top" secondItem="eUa-lG-rYQ" secondAttribute="bottom" constant="80" id="GBR-rQ-r17"/>
+                            <constraint firstItem="cCQ-26-BBq" firstAttribute="leading" secondItem="4RR-G3-CNT" secondAttribute="leading" constant="100" id="MgW-9H-SrP"/>
+                            <constraint firstItem="4RR-G3-CNT" firstAttribute="trailing" secondItem="cCQ-26-BBq" secondAttribute="trailing" constant="100" id="OyD-KI-4ys"/>
                             <constraint firstItem="eUa-lG-rYQ" firstAttribute="centerY" secondItem="Hod-xY-oPi" secondAttribute="centerY" id="Phb-gm-kQ1"/>
                             <constraint firstItem="LRe-Mx-KrW" firstAttribute="leading" secondItem="4RR-G3-CNT" secondAttribute="leading" id="Qd1-gf-cxa"/>
+                            <constraint firstItem="hsa-fn-jlb" firstAttribute="top" secondItem="cCQ-26-BBq" secondAttribute="bottom" constant="20" id="QyG-Kb-Sso"/>
                             <constraint firstItem="LRe-Mx-KrW" firstAttribute="trailing" secondItem="4RR-G3-CNT" secondAttribute="trailing" id="XJj-0o-gMr"/>
                             <constraint firstItem="LRe-Mx-KrW" firstAttribute="top" secondItem="Hod-xY-oPi" secondAttribute="top" id="ZMi-rB-wRQ"/>
                             <constraint firstAttribute="bottom" secondItem="LRe-Mx-KrW" secondAttribute="bottom" id="hn1-ff-EHq"/>
+                            <constraint firstItem="cCQ-26-BBq" firstAttribute="centerX" secondItem="LRe-Mx-KrW" secondAttribute="centerX" id="nLc-Fi-f0i"/>
+                            <constraint firstItem="hsa-fn-jlb" firstAttribute="centerX" secondItem="Hod-xY-oPi" secondAttribute="centerX" id="yGE-lE-Zy3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="r3y-rf-s4f"/>
                     <connections>
                         <outlet property="activityIndicator" destination="eUa-lG-rYQ" id="NyM-WF-36H"/>
+                        <outlet property="completedLabel" destination="cCQ-26-BBq" id="rRo-WH-JdC"/>
                         <outlet property="imageView" destination="LRe-Mx-KrW" id="bpH-Ny-7bA"/>
+                        <outlet property="progressView" destination="hsa-fn-jlb" id="BLS-B6-XgP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubz-ad-Lpa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2631.8840579710145" y="-380.35714285714283"/>
+            <point key="canvasLocation" x="2630.434782608696" y="-380.35714285714283"/>
         </scene>
         <!--Controls-->
         <scene sceneID="fmz-oV-q20">
@@ -240,6 +260,8 @@
                         <segue destination="VEL-yc-LdH" kind="show" identifier="showImage" id="pAV-dX-0JU"/>
                         <segue destination="x9d-Xo-qnp" kind="show" identifier="ourCourses" id="QLM-hC-483"/>
                         <segue destination="x9d-Xo-qnp" kind="show" identifier="ourCoursesWithAlamofire" id="amw-uY-uWD"/>
+                        <segue destination="VEL-yc-LdH" kind="show" identifier="responseData" id="jYc-U7-Q80"/>
+                        <segue destination="VEL-yc-LdH" kind="show" identifier="largeImage" id="VdU-Hh-Dqa"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IzI-bA-373" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -266,7 +288,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="amw-uY-uWD"/>
+        <segue reference="VdU-Hh-Dqa"/>
+        <segue reference="QLM-hC-483"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

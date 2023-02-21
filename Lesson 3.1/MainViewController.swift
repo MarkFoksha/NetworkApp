@@ -10,6 +10,7 @@ import UserNotifications
 
 private let reuseIdentifier = "Cell"
 private let getPostUrlString = "https://jsonplaceholder.typicode.com/posts"
+private let coursesUrlString = "https://swiftbook.ru/wp-content/uploads/api/api_courses"
 private let uploadImageUrl = "https://api.imgur.com/3/image"
 
 enum Actions: String, CaseIterable {
@@ -20,6 +21,10 @@ enum Actions: String, CaseIterable {
     case uploadImage = "Upload image"
     case downloadFile = "Download file"
     case ourCoursesAlamofire = "Our course (Alamofire)"
+    case responseData = "Response Data"
+    case responseString = "Response String"
+    case simpleResponse = "Response"
+    case largeImage = "Large image"
 }
 
 class MainViewController: UICollectionViewController {
@@ -108,6 +113,15 @@ class MainViewController: UICollectionViewController {
             dataProvider.startDownload()
         case .ourCoursesAlamofire:
             performSegue(withIdentifier: "ourCoursesWithAlamofire", sender: self)
+        case .responseData:
+            performSegue(withIdentifier: "responseData", sender: self)
+            AlamofireNetworkRequest.responseData(url: coursesUrlString)
+        case .responseString:
+            AlamofireNetworkRequest.responseString(url: coursesUrlString)
+        case .simpleResponse:
+            AlamofireNetworkRequest.response(url: coursesUrlString)
+        case .largeImage:
+            performSegue(withIdentifier: "largeImage", sender: self)
         }
     }
     
@@ -115,12 +129,19 @@ class MainViewController: UICollectionViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let coursesVC = segue.destination as? CoursesViewController
+        let imageVC = segue.destination as? ImageViewController
         
         switch segue.identifier {
         case "ourCourses":
             coursesVC?.fetchData()
         case "ourCoursesWithAlamofire":
             coursesVC?.fetchDataWithAlamofire()
+        case "showImage":
+            imageVC?.fetchImage()
+        case "responseData":
+            imageVC?.fetchImageWithAlamofire()
+        case "largeImage":
+            imageVC?.downloadImageWithProgress()
         default:
             break
         }
