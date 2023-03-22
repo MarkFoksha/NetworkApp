@@ -59,8 +59,8 @@ class CoursesViewController: UIViewController {
     func configure(cell: TableViewCell, indexPath: IndexPath) {
         let course = courses[indexPath.row]
         cell.nameOfCourse.text = course.name
-        cell.numberOfLessons.text = "Number of lessons: \(course.numberOfLessons ?? 0)"
-        cell.numberOfTests.text = "Number of tests: \(course.numberOfTests ?? 0)"
+        cell.numberOfLessons.text = "Number of lessons: \(course.numberOfLessons ?? "0")"
+        cell.numberOfTests.text = "Number of tests: \(course.numberOfTests ?? "0")"
         
         DispatchQueue.global().async {
             guard let stringURL = course.imageUrl else { return }

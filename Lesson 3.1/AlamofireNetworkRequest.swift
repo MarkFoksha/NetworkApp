@@ -140,8 +140,8 @@ class AlamofireNetworkRequest: Codable {
         let userData: [String: Any] = ["name": "Network request with Alamofire",
                                        "link": "https://swiftbook.ru/contents/our-first-applications/",
                                        "imageUrl": "https://swiftbook.ru/wp-content/uploads/sites/2/2018/08/notifications-course-with-background.png",
-                                       "numberOfLessons": 18,
-                                       "numberOfTests": 10]
+                                       "numberOfLessons": "18",
+                                       "numberOfTests": "10"]
         AF.request(url, method: .put, parameters: userData).responseJSON { responseJSON in
             guard let statusCode = responseJSON.response?.statusCode else { return }
             print("Status code ", statusCode)
@@ -156,6 +156,26 @@ class AlamofireNetworkRequest: Codable {
                 courses.append(course)
                 completion(courses)
                 
+            case .failure(let error):
+                print(String(describing: error))
+            }
+        }
+    }
+    
+    static func uploadImage(withURL url: String) {
+        guard let url = URL(string: url) else { return }
+        
+        let image = UIImage(named: "networkingIcon")!
+        let data = image.pngData()!
+        
+        let httpHeaders: HTTPHeaders = ["Authorization": "Client-ID 84f03bf655cb681"]
+        
+        AF.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(data, withName: "image")
+        }, to: url, headers: httpHeaders).responseJSON { responseJSON in
+            switch responseJSON.result {
+            case .success(let value):
+                print(value)
             case .failure(let error):
                 print(String(describing: error))
             }
