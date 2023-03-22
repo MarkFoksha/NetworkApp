@@ -29,14 +29,14 @@ struct Course: Codable {
         let name = json[ "name"] as? String
         let link = json["link"] as? String
         let imageUrl = json["imageUrl"] as? String
-        let numberfLessons = json["number_of_lessons"] as? Int
+        let numberOfLessons = json["number_of_lessons"] as? Int
         let numberOfTests = json[ "number_of_tests"] as? Int
         
         self.id = id
         self.name = name
         self.link = link
         self.imageUrl = imageUrl
-        self.numberOfLessons = numberfLessons
+        self.numberOfLessons = numberOfLessons
         self.numberOfTests = numberOfTests
     }
     

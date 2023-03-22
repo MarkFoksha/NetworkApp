@@ -61,8 +61,11 @@ class ImageViewController: UIViewController {
             self.progressView.isHidden = true
             self.completedLabel.isHidden = true
             self.imageView.image = image
+            self.imageView.contentMode = .scaleToFill
         }
     }
+    
+     
 
     /*
     // MARK: - Navigation
