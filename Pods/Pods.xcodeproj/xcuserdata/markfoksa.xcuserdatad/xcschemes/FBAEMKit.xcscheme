@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BABDE7834C639D9AD787F4BD146D8147"
-               BuildableName = "Pods_Lesson_3_1.framework"
-               BlueprintName = "Pods-Lesson 3.1"
+               BlueprintIdentifier = "479BDBD165CD08E2159181E58CD2078F"
+               BuildableName = "FBAEMKit"
+               BlueprintName = "FBAEMKit"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

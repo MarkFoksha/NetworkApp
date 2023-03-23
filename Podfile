@@ -7,4 +7,5 @@ target 'Lesson 3.1' do
 
   # Pods for Lesson 3.1
 pod 'Alamofire'
+pod 'FBSDKLoginKit'
 end

@@ -21,6 +21,7 @@
 		131B99E42992752700035F4C /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131B99E32992752700035F4C /* CollectionViewCell.swift */; };
 		131B99E629927DE900035F4C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131B99E529927DE900035F4C /* NetworkManager.swift */; };
 		13201F5E29968397005A0E66 /* AlamofireNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13201F5D29968397005A0E66 /* AlamofireNetworkRequest.swift */; };
+		13B1E1C329CC9C3A00D87C6C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B1E1C229CC9C3A00D87C6C /* LoginViewController.swift */; };
 		13DFB6632993EAB300B50D0A /* ImageProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DFB6622993EAB300B50D0A /* ImageProperties.swift */; };
 		13DFB6652993F5A600B50D0A /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DFB6642993F5A600B50D0A /* DataProvider.swift */; };
 		547B8CF7DB36118CECF676AF /* Pods_Lesson_3_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E18EA7BF53AE0ED4E3808A6 /* Pods_Lesson_3_1.framework */; };
@@ -43,6 +44,8 @@
 		131B99E32992752700035F4C /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		131B99E529927DE900035F4C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		13201F5D29968397005A0E66 /* AlamofireNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkRequest.swift; sourceTree = "<group>"; };
+		13B1E1C229CC9C3A00D87C6C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		13B1E1C429CC9CF700D87C6C /* Lesson 3.1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Lesson 3.1.entitlements"; sourceTree = "<group>"; };
 		13DFB6622993EAB300B50D0A /* ImageProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProperties.swift; sourceTree = "<group>"; };
 		13DFB6642993F5A600B50D0A /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		3A9B77AC02923EEE919B7C94 /* Pods-Lesson 3.1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lesson 3.1.debug.xcconfig"; path = "Target Support Files/Pods-Lesson 3.1/Pods-Lesson 3.1.debug.xcconfig"; sourceTree = "<group>"; };
@@ -83,8 +86,10 @@
 		13054E70298E69D90015FD6E /* Lesson 3.1 */ = {
 			isa = PBXGroup;
 			children = (
+				13B1E1C429CC9CF700D87C6C /* Lesson 3.1.entitlements */,
 				13054E71298E69D90015FD6E /* AppDelegate.swift */,
 				13054E73298E69D90015FD6E /* SceneDelegate.swift */,
+				13B1E1C229CC9C3A00D87C6C /* LoginViewController.swift */,
 				131B99E529927DE900035F4C /* NetworkManager.swift */,
 				13201F5D29968397005A0E66 /* AlamofireNetworkRequest.swift */,
 				13DFB6642993F5A600B50D0A /* DataProvider.swift */,
@@ -110,7 +115,6 @@
 				3A9B77AC02923EEE919B7C94 /* Pods-Lesson 3.1.debug.xcconfig */,
 				AF36A4A5791FA6E709435431 /* Pods-Lesson 3.1.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -237,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13B1E1C329CC9C3A00D87C6C /* LoginViewController.swift in Sources */,
 				13DFB6632993EAB300B50D0A /* ImageProperties.swift in Sources */,
 				131B99E42992752700035F4C /* CollectionViewCell.swift in Sources */,
 				13201F5E29968397005A0E66 /* AlamofireNetworkRequest.swift in Sources */,
@@ -395,6 +400,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Lesson 3.1/Lesson 3.1.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -402,6 +408,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -423,6 +430,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Lesson 3.1/Lesson 3.1.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -430,6 +438,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

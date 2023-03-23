@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1300"
+   LastUpgradeVersion = "1420"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BABDE7834C639D9AD787F4BD146D8147"
-               BuildableName = "Pods_Lesson_3_1.framework"
-               BlueprintName = "Pods-Lesson 3.1"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "13054E6D298E69D90015FD6E"
+               BuildableName = "Lesson 3.1.app"
+               BlueprintName = "Lesson 3.1"
+               ReferencedContainer = "container:Lesson 3.1.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,6 +40,23 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "13054E6D298E69D90015FD6E"
+            BuildableName = "Lesson 3.1.app"
+            BlueprintName = "Lesson 3.1"
+            ReferencedContainer = "container:Lesson 3.1.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "OS_ACTIVITY_MODE"
+            value = "disable"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -47,6 +64,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "13054E6D298E69D90015FD6E"
+            BuildableName = "Lesson 3.1.app"
+            BlueprintName = "Lesson 3.1"
+            ReferencedContainer = "container:Lesson 3.1.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

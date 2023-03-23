@@ -2,6 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb6571776942846874</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>6571776942846874</string>
+	<key>FacebookClientToken</key>
+	<string>5a9c012c28cd24d4a7f7a3d76605380c</string>
+	<key>FacebookDisplayName</key>
+	<string>Networking</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
