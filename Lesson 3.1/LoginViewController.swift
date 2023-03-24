@@ -21,10 +21,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         setupLoginButton()
         
-        if let token = AccessToken.current,
-           !token.isExpired {
-            print("User is logged in")
-        }
     }
     
     private func setupLoginButton() {
@@ -44,19 +40,29 @@ class LoginViewController: UIViewController {
 
 }
 
+//MARK: - Facebook LoginButtonDelegate
+
 extension LoginViewController: LoginButtonDelegate {
     func loginButton(_ loginButton: FBSDKLoginKit.FBLoginButton, didCompleteWith result: FBSDKLoginKit.LoginManagerLoginResult?, error: Error?) {
         if error != nil {
-            print(error)
+            print(error!)
             
             return
         }
         
+        guard let token = AccessToken.current,
+              !token.isExpired else { return }
+        
+        openMainVC()
         print("Succesfully logged in with Facebook")
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginKit.FBLoginButton) {
         print("Did log out from Facebook")
+    }
+    
+    private func openMainVC() {
+        dismiss(animated: true)
     }
     
     

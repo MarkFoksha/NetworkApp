@@ -7,6 +7,7 @@
 
 import UIKit
 import UserNotifications
+import FBSDKLoginKit
 
 private let reuseIdentifier = "Cell"
 private let getPostUrlString = "https://jsonplaceholder.typicode.com/posts"
@@ -49,6 +50,8 @@ class MainViewController: UICollectionViewController {
             self.postNotification()
             self.alert.dismiss(animated: false)
         }
+        
+        checkUpLogin()
     }
     
     func showAlert() {
@@ -181,4 +184,22 @@ extension MainViewController {
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
+}
+
+// MARK: - Facebook SDK
+
+extension MainViewController {
+    private func checkUpLogin() {
+        
+        if !AccessToken.isCurrentAccessTokenActive {
+            
+            DispatchQueue.main.async {
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                self.present(loginVC, animated: true)
+            }
+        }
+    }
+    
 }

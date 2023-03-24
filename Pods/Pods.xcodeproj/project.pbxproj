@@ -17,6 +17,7 @@
 				561B9819DE4D940D268A5155D2AECC63 /* PBXTargetDependency */,
 			);
 			name = FBSDKLoginKit;
+			productName = FBSDKLoginKit;
 		};
 		28907903AF6DD0AD321D92CD660E7E23 /* FBSDKCoreKit */ = {
 			isa = PBXAggregateTarget;
@@ -29,6 +30,7 @@
 				415F2E9491047320D10640D92A189704 /* PBXTargetDependency */,
 			);
 			name = FBSDKCoreKit;
+			productName = FBSDKCoreKit;
 		};
 		479BDBD165CD08E2159181E58CD2078F /* FBAEMKit */ = {
 			isa = PBXAggregateTarget;
@@ -40,6 +42,7 @@
 				1B7A96DD16BC5A5D93CB540DCA0872F7 /* PBXTargetDependency */,
 			);
 			name = FBAEMKit;
+			productName = FBAEMKit;
 		};
 		8EA62FEAB23070050EFD4D4508D659E5 /* FBSDKCoreKit_Basics */ = {
 			isa = PBXAggregateTarget;
@@ -50,6 +53,7 @@
 			dependencies = (
 			);
 			name = FBSDKCoreKit_Basics;
+			productName = FBSDKCoreKit_Basics;
 		};
 /* End PBXAggregateTarget section */
 
@@ -184,15 +188,15 @@
 		22912ADC750C54C09FACEFE8DA1CC111 /* URLEncodedFormEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLEncodedFormEncoder.swift; path = Source/URLEncodedFormEncoder.swift; sourceTree = "<group>"; };
 		28E03EBBFB4B1F669F5F114225960EBC /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
 		2BF65AC79A9CB18B99247048368DA919 /* Concurrency.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Concurrency.swift; path = Source/Concurrency.swift; sourceTree = "<group>"; };
-		343F8887E7B04D5C6709D71FC2D6C8AE /* FBSDKCoreKit.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = FBSDKCoreKit.xcframework; path = XCFrameworks/FBSDKCoreKit.xcframework; sourceTree = "<group>"; };
+		343F8887E7B04D5C6709D71FC2D6C8AE /* FBSDKCoreKit.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = FBSDKCoreKit.xcframework; path = XCFrameworks/FBSDKCoreKit.xcframework; sourceTree = "<group>"; };
 		3A98BCDC007960A6A6E503C1827E8EF1 /* Pods-Lesson 3.1.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Lesson 3.1.modulemap"; sourceTree = "<group>"; };
 		4A866CCC2ABF19D1A60822570568A3A9 /* Protected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protected.swift; path = Source/Protected.swift; sourceTree = "<group>"; };
 		5222F2ADD02862F6025225387E7A5834 /* Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.release.xcconfig; sourceTree = "<group>"; };
 		54DA3C1D79F803472F40035ADA62DB96 /* FBSDKCoreKit-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "FBSDKCoreKit-xcframeworks.sh"; sourceTree = "<group>"; };
 		597CB2680A1E9F1A33A86716A88BF828 /* Pods-Lesson 3.1-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Lesson 3.1-dummy.m"; sourceTree = "<group>"; };
 		5BBDEE5559425C07F3F496D5E0C7FDF5 /* FBSDKCoreKit_Basics-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "FBSDKCoreKit_Basics-xcframeworks.sh"; sourceTree = "<group>"; };
-		5D2A0FA7A86650294A4DA64A10AE4576 /* FBSDKLoginKit.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = FBSDKLoginKit.xcframework; path = XCFrameworks/FBSDKLoginKit.xcframework; sourceTree = "<group>"; };
-		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D2A0FA7A86650294A4DA64A10AE4576 /* FBSDKLoginKit.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = FBSDKLoginKit.xcframework; path = XCFrameworks/FBSDKLoginKit.xcframework; sourceTree = "<group>"; };
+		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA4039C8E6BFB7607C374D3089E9E2E /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		5E3071D8737CDA2158E5197B48E71D3B /* RetryPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryPolicy.swift; path = Source/RetryPolicy.swift; sourceTree = "<group>"; };
 		6161A92249678F4D94C0D53186AEA061 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
@@ -214,11 +218,11 @@
 		94D920D1849FC7217AED511D07EC2FC2 /* URLConvertible+URLRequestConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLConvertible+URLRequestConvertible.swift"; path = "Source/URLConvertible+URLRequestConvertible.swift"; sourceTree = "<group>"; };
 		9841C5FB3625DBFFE8A986457910BCFD /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		98922DEB10DAB85EA44647FDC4345A82 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A892A9CBD211C61EBA60A462FB7DBEED /* RequestInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestInterceptor.swift; path = Source/RequestInterceptor.swift; sourceTree = "<group>"; };
 		A98AC20EE52D9374E44F00500C86DC9D /* RequestTaskMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestTaskMap.swift; path = Source/RequestTaskMap.swift; sourceTree = "<group>"; };
 		A9E6C77C3C91292144E9F5C5BBED4266 /* CachedResponseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedResponseHandler.swift; path = Source/CachedResponseHandler.swift; sourceTree = "<group>"; };
-		AAC91E9AD422EA5DE6081CB16793BDD7 /* FBAEMKit.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = FBAEMKit.xcframework; path = XCFrameworks/FBAEMKit.xcframework; sourceTree = "<group>"; };
+		AAC91E9AD422EA5DE6081CB16793BDD7 /* FBAEMKit.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = FBAEMKit.xcframework; path = XCFrameworks/FBAEMKit.xcframework; sourceTree = "<group>"; };
 		AD412EBB3500C79124914608E8215057 /* FBSDKCoreKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSDKCoreKit.release.xcconfig; sourceTree = "<group>"; };
 		B024746A79E0354878BF66FFC850549C /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
 		B22DC156D482783B7D0DCC7861B76A78 /* Pods-Lesson 3.1-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Lesson 3.1-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -231,7 +235,7 @@
 		C79F78A4CF3786EB9CF041D18EBFADAD /* FBAEMKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBAEMKit.debug.xcconfig; sourceTree = "<group>"; };
 		D64D5ACF8FC1811E83C82F8586DD6F03 /* FBSDKLoginKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSDKLoginKit.release.xcconfig; sourceTree = "<group>"; };
 		DF6889E25BC7C182377995C09294BAD6 /* Pods-Lesson 3.1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Lesson 3.1.release.xcconfig"; sourceTree = "<group>"; };
-		E2374C343BD21B7800DB71E4A6504EF2 /* FBSDKCoreKit_Basics.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = FBSDKCoreKit_Basics.xcframework; path = XCFrameworks/FBSDKCoreKit_Basics.xcframework; sourceTree = "<group>"; };
+		E2374C343BD21B7800DB71E4A6504EF2 /* FBSDKCoreKit_Basics.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = FBSDKCoreKit_Basics.xcframework; path = XCFrameworks/FBSDKCoreKit_Basics.xcframework; sourceTree = "<group>"; };
 		E254FEE491A3A22D74922A77CF8309E7 /* FBAEMKit-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "FBAEMKit-xcframeworks.sh"; sourceTree = "<group>"; };
 		E805D621092DA9927BB0EF4CDD28B445 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		F2522B8C217E60A9DD0E94F089F9C54F /* FBSDKCoreKit_Basics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSDKCoreKit_Basics.release.xcconfig; sourceTree = "<group>"; };
@@ -265,7 +269,7 @@
 		001F04AD04950E955872510874D997ED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */,
+				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */,
 				80541DD4B1CA745385081469B88B2E95 /* Pods-Lesson 3.1 */,
 			);
 			name = Products;
@@ -371,7 +375,6 @@
 				B8D89FCDA4C72F433E237D099EA78E85 /* Validation.swift */,
 				ECB32B502185A6F7D790C2A0D60095A2 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -390,7 +393,6 @@
 				B7CF056E392A540AB58F60A57059F185 /* Frameworks */,
 				50BBFF559574594F81E050DA08C93FA1 /* Support Files */,
 			);
-			name = FBSDKCoreKit;
 			path = FBSDKCoreKit;
 			sourceTree = "<group>";
 		};
@@ -427,7 +429,6 @@
 				CEC4AF15E9C8C27D1EBEB71D1B802567 /* Frameworks */,
 				E20EB4BF4BB6B04840F1E22F2BAF71FC /* Support Files */,
 			);
-			name = FBSDKCoreKit_Basics;
 			path = FBSDKCoreKit_Basics;
 			sourceTree = "<group>";
 		};
@@ -453,7 +454,6 @@
 				96B783C565A31CF46AC4260E39D8CB5C /* Frameworks */,
 				57E71936AB235171D2ABBB754C403FE0 /* Support Files */,
 			);
-			name = FBSDKLoginKit;
 			path = FBSDKLoginKit;
 			sourceTree = "<group>";
 		};
@@ -482,7 +482,6 @@
 				712B11762CAD302A515C8A83A16C3788 /* Frameworks */,
 				6D7814FBE8B4B10D028493D4034223D2 /* Support Files */,
 			);
-			name = FBAEMKit;
 			path = FBAEMKit;
 			sourceTree = "<group>";
 		};
@@ -572,7 +571,7 @@
 			);
 			name = Alamofire;
 			productName = Alamofire;
-			productReference = 5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */;
+			productReference = 5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -1077,7 +1076,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1202,7 +1201,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
