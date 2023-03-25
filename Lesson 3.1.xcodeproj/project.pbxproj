@@ -21,6 +21,7 @@
 		131B99E42992752700035F4C /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131B99E32992752700035F4C /* CollectionViewCell.swift */; };
 		131B99E629927DE900035F4C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131B99E529927DE900035F4C /* NetworkManager.swift */; };
 		13201F5E29968397005A0E66 /* AlamofireNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13201F5D29968397005A0E66 /* AlamofireNetworkRequest.swift */; };
+		1346739E29CF97840061CB17 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1346739D29CF97840061CB17 /* Extensions.swift */; };
 		13B1E1C329CC9C3A00D87C6C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B1E1C229CC9C3A00D87C6C /* LoginViewController.swift */; };
 		13DD980529CE598C0088EAC8 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DD980429CE598C0088EAC8 /* UserProfileVC.swift */; };
 		13DFB6632993EAB300B50D0A /* ImageProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DFB6622993EAB300B50D0A /* ImageProperties.swift */; };
@@ -45,6 +46,7 @@
 		131B99E32992752700035F4C /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		131B99E529927DE900035F4C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		13201F5D29968397005A0E66 /* AlamofireNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkRequest.swift; sourceTree = "<group>"; };
+		1346739D29CF97840061CB17 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		13B1E1C229CC9C3A00D87C6C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		13B1E1C429CC9CF700D87C6C /* Lesson 3.1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Lesson 3.1.entitlements"; sourceTree = "<group>"; };
 		13DD980429CE598C0088EAC8 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				13054E89298FF3100015FD6E /* WebViewController.swift */,
 				131B99E32992752700035F4C /* CollectionViewCell.swift */,
 				13054E8B298FF3410015FD6E /* TableViewCell.swift */,
+				1346739D29CF97840061CB17 /* Extensions.swift */,
 				13054E77298E69D90015FD6E /* Main.storyboard */,
 				13054E7A298E69DE0015FD6E /* Assets.xcassets */,
 				13054E7C298E69DE0015FD6E /* LaunchScreen.storyboard */,
@@ -255,6 +258,7 @@
 				13DD980529CE598C0088EAC8 /* UserProfileVC.swift in Sources */,
 				13DFB6652993F5A600B50D0A /* DataProvider.swift in Sources */,
 				13054E86298E7A5A0015FD6E /* ImageViewController.swift in Sources */,
+				1346739E29CF97840061CB17 /* Extensions.swift in Sources */,
 				13054E74298E69D90015FD6E /* SceneDelegate.swift in Sources */,
 				131B99E22992751900035F4C /* MainViewController.swift in Sources */,
 				13054E8C298FF3410015FD6E /* TableViewCell.swift in Sources */,

@@ -20,11 +20,16 @@ class UserProfileVC: UIViewController {
         return loginButton
     }()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        view.addVerticalGradientColor(topColor: primaryColor, bottomColor: secondaryColor)
         setUpButton()
     }
+    
+    
     
     func setUpButton() {
         view.addSubview(fbLoginButton)
