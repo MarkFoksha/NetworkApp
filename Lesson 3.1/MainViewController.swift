@@ -8,6 +8,7 @@
 import UIKit
 import UserNotifications
 import FBSDKLoginKit
+import FirebaseAuth
 
 private let reuseIdentifier = "Cell"
 private let getPostUrlString = "https://jsonplaceholder.typicode.com/posts"
@@ -191,7 +192,7 @@ extension MainViewController {
 extension MainViewController {
     private func checkUpLogin() {
         
-        if !AccessToken.isCurrentAccessTokenActive {
+        if Auth.auth().currentUser == nil {
             
             DispatchQueue.main.async {
                 

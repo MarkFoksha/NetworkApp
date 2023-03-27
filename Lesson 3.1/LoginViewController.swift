@@ -7,6 +7,7 @@
 
 import UIKit
 import FBSDKLoginKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
@@ -20,13 +21,13 @@ class LoginViewController: UIViewController {
     
     private lazy var customFbLoginButton: UIButton = {
         
-        let customButton = FBLoginButton()
+        let customButton = UIButton()
         customButton.frame = CGRect(x: 32, y: 320 + 60, width: view.frame.width - 64, height: 50)
         customButton.layer.cornerRadius = 4
-        customButton.backgroundColor = UIColor(hexValue: "#3B59999", alpha: 1)
+        customButton.backgroundColor = UIColor(hexValue: "#3B5999", alpha: 1)
         customButton.setTitle("Login with Facebook", for: .normal)
         customButton.setTitleColor(.white, for: .normal)
-        customButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 21)
+        customButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         customButton.addTarget(self, action: #selector(handleButton), for: .touchUpInside)
         
         return customButton
@@ -36,10 +37,10 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         view.addVerticalGradientColor(topColor: primaryColor, bottomColor: secondaryColor)
-        setupLoginButton()
+        setupLoginButtons()
     }
     
-    private func setupLoginButton() {
+    private func setupLoginButtons() {
         view.addSubview(fbLoginButton)
         view.addSubview(customFbLoginButton)
     }
@@ -60,7 +61,7 @@ extension LoginViewController: LoginButtonDelegate {
         
         guard let token = AccessToken.current,
               !token.isExpired else { return }
-        
+        fetchFBData()
         openMainVC()
         print("Succesfully logged in with Facebook")
     }
@@ -84,7 +85,37 @@ extension LoginViewController: LoginButtonDelegate {
             
             guard let result = result else { return }
             guard !result.isCancelled else { return }
+            self.fetchFBData()
             self.openMainVC()
+            self.signIntoFirebase()
+        }
+    }
+    
+    private func signIntoFirebase() {
+        let token = AccessToken.current
+        guard let tokenString = token?.tokenString else { return }
+        
+        let credentials = FacebookAuthProvider.credential(withAccessToken: tokenString)
+        Auth.auth().signIn(with: credentials) { user, error in
+            if let error = error {
+                print("Something went wrong:( ", error)
+                return
+            }
+            
+            print("User successfully loged in with Firebase: ", user!)
+        }
+    }
+    
+    private func fetchFBData() {
+        GraphRequest(graphPath: "me", parameters: ["fields": "id, name, email"]).start { _, result, error in
+            
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            guard let userData = result as? [String: Any] else { return }
+            print(userData)
         }
     }
     

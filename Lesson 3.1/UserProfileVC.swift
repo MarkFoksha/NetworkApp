@@ -7,6 +7,7 @@
 
 import UIKit
 import FBSDKLoginKit
+import FirebaseAuth
 
 class UserProfileVC: UIViewController {
 
@@ -28,16 +29,10 @@ class UserProfileVC: UIViewController {
         view.addVerticalGradientColor(topColor: primaryColor, bottomColor: secondaryColor)
         setUpButton()
     }
-    
-    
-    
+      
     func setUpButton() {
         view.addSubview(fbLoginButton)
     }
-    
-
-
-
 }
 
 //MARK: - Facebook SDK
@@ -62,7 +57,8 @@ extension UserProfileVC: LoginButtonDelegate {
     
     private func openLoginVC() {
         
-        if !AccessToken.isCurrentAccessTokenActive {
+        do {
+            try Auth.auth().signOut()
             
             DispatchQueue.main.async {
                 
@@ -70,7 +66,10 @@ extension UserProfileVC: LoginButtonDelegate {
                 let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
                 self.present(loginVC, animated: true)
             }
+        } catch let error {
+            print("Failed to log out. Error: ", String(describing: error))
         }
+        
     }
     
 }
