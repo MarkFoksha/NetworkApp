@@ -17,12 +17,13 @@
 		13054E8A298FF3100015FD6E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13054E89298FF3100015FD6E /* WebViewController.swift */; };
 		13054E8C298FF3410015FD6E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13054E8B298FF3410015FD6E /* TableViewCell.swift */; };
 		13054EAE299138A50015FD6E /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13054EAD299138A50015FD6E /* Course.swift */; };
+		130DAC8429D2F9CF00C0E9EF /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130DAC8329D2F9CF00C0E9EF /* UserProfile.swift */; };
+		130DAC8629D303FC00C0E9EF /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 130DAC8529D303FC00C0E9EF /* FirebaseDatabase */; };
 		131B99E22992751900035F4C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131B99E12992751900035F4C /* MainViewController.swift */; };
 		131B99E42992752700035F4C /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131B99E32992752700035F4C /* CollectionViewCell.swift */; };
 		131B99E629927DE900035F4C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131B99E529927DE900035F4C /* NetworkManager.swift */; };
 		13201F5E29968397005A0E66 /* AlamofireNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13201F5D29968397005A0E66 /* AlamofireNetworkRequest.swift */; };
 		1346739E29CF97840061CB17 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1346739D29CF97840061CB17 /* Extensions.swift */; };
-		13A7581C29D218BD0032610D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13A7581B29D218BD0032610D /* GoogleService-Info.plist */; };
 		13A7581F29D21B490032610D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 13A7581E29D21B490032610D /* FirebaseAnalytics */; };
 		13A7582129D21B490032610D /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 13A7582029D21B490032610D /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		13A7582329D21B490032610D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 13A7582229D21B490032610D /* FirebaseAuth */; };
@@ -31,6 +32,7 @@
 		13DD980529CE598C0088EAC8 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DD980429CE598C0088EAC8 /* UserProfileVC.swift */; };
 		13DFB6632993EAB300B50D0A /* ImageProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DFB6622993EAB300B50D0A /* ImageProperties.swift */; };
 		13DFB6652993F5A600B50D0A /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DFB6642993F5A600B50D0A /* DataProvider.swift */; };
+		13E7D55329D31D8D003FCC8A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13E7D55229D31D8D003FCC8A /* GoogleService-Info.plist */; };
 		547B8CF7DB36118CECF676AF /* Pods_Lesson_3_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E18EA7BF53AE0ED4E3808A6 /* Pods_Lesson_3_1.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,17 +49,18 @@
 		13054E89298FF3100015FD6E /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		13054E8B298FF3410015FD6E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		13054EAD299138A50015FD6E /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		130DAC8329D2F9CF00C0E9EF /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		131B99E12992751900035F4C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		131B99E32992752700035F4C /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		131B99E529927DE900035F4C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		13201F5D29968397005A0E66 /* AlamofireNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkRequest.swift; sourceTree = "<group>"; };
 		1346739D29CF97840061CB17 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		13A7581B29D218BD0032610D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		13B1E1C229CC9C3A00D87C6C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		13B1E1C429CC9CF700D87C6C /* Lesson 3.1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Lesson 3.1.entitlements"; sourceTree = "<group>"; };
 		13DD980429CE598C0088EAC8 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
 		13DFB6622993EAB300B50D0A /* ImageProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProperties.swift; sourceTree = "<group>"; };
 		13DFB6642993F5A600B50D0A /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		13E7D55229D31D8D003FCC8A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3A9B77AC02923EEE919B7C94 /* Pods-Lesson 3.1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lesson 3.1.debug.xcconfig"; path = "Target Support Files/Pods-Lesson 3.1/Pods-Lesson 3.1.debug.xcconfig"; sourceTree = "<group>"; };
 		7E18EA7BF53AE0ED4E3808A6 /* Pods_Lesson_3_1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lesson_3_1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF36A4A5791FA6E709435431 /* Pods-Lesson 3.1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lesson 3.1.release.xcconfig"; path = "Target Support Files/Pods-Lesson 3.1/Pods-Lesson 3.1.release.xcconfig"; sourceTree = "<group>"; };
@@ -68,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				130DAC8629D303FC00C0E9EF /* FirebaseDatabase in Frameworks */,
 				13A7581F29D21B490032610D /* FirebaseAnalytics in Frameworks */,
 				13A7582129D21B490032610D /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				547B8CF7DB36118CECF676AF /* Pods_Lesson_3_1.framework in Frameworks */,
@@ -107,6 +111,7 @@
 				13201F5D29968397005A0E66 /* AlamofireNetworkRequest.swift */,
 				13DFB6642993F5A600B50D0A /* DataProvider.swift */,
 				13054EAD299138A50015FD6E /* Course.swift */,
+				130DAC8329D2F9CF00C0E9EF /* UserProfile.swift */,
 				13DFB6622993EAB300B50D0A /* ImageProperties.swift */,
 				131B99E12992751900035F4C /* MainViewController.swift */,
 				13B1E1C229CC9C3A00D87C6C /* LoginViewController.swift */,
@@ -121,7 +126,7 @@
 				13054E7A298E69DE0015FD6E /* Assets.xcassets */,
 				13054E7C298E69DE0015FD6E /* LaunchScreen.storyboard */,
 				13054E7F298E69DE0015FD6E /* Info.plist */,
-				13A7581B29D218BD0032610D /* GoogleService-Info.plist */,
+				13E7D55229D31D8D003FCC8A /* GoogleService-Info.plist */,
 			);
 			path = "Lesson 3.1";
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 				13A7582029D21B490032610D /* FirebaseAnalyticsWithoutAdIdSupport */,
 				13A7582229D21B490032610D /* FirebaseAuth */,
 				13A7582429D21B490032610D /* FirebaseAuthCombine-Community */,
+				130DAC8529D303FC00C0E9EF /* FirebaseDatabase */,
 			);
 			productName = "Lesson 3.1";
 			productReference = 13054E6E298E69D90015FD6E /* Lesson 3.1.app */;
@@ -213,7 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13054E7E298E69DE0015FD6E /* LaunchScreen.storyboard in Resources */,
-				13A7581C29D218BD0032610D /* GoogleService-Info.plist in Resources */,
+				13E7D55329D31D8D003FCC8A /* GoogleService-Info.plist in Resources */,
 				13054E7B298E69DE0015FD6E /* Assets.xcassets in Resources */,
 				13054E79298E69D90015FD6E /* Main.storyboard in Resources */,
 			);
@@ -284,6 +290,7 @@
 				131B99E22992751900035F4C /* MainViewController.swift in Sources */,
 				13054E8C298FF3410015FD6E /* TableViewCell.swift in Sources */,
 				13054E88298FF06C0015FD6E /* CoursesViewController.swift in Sources */,
+				130DAC8429D2F9CF00C0E9EF /* UserProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +525,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		130DAC8529D303FC00C0E9EF /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 13A7581D29D21B490032610D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
 		13A7581E29D21B490032610D /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 13A7581D29D21B490032610D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

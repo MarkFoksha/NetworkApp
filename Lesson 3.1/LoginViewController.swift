@@ -8,8 +8,11 @@
 import UIKit
 import FBSDKLoginKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class LoginViewController: UIViewController {
+    
+    var userProfile: UserProfile?
     
     private lazy var fbLoginButton: UIButton = {
         
@@ -61,9 +64,9 @@ extension LoginViewController: LoginButtonDelegate {
         
         guard let token = AccessToken.current,
               !token.isExpired else { return }
-        fetchFBData()
-        openMainVC()
+        
         print("Succesfully logged in with Facebook")
+        self.signIntoFirebase()
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginKit.FBLoginButton) {
@@ -85,8 +88,7 @@ extension LoginViewController: LoginButtonDelegate {
             
             guard let result = result else { return }
             guard !result.isCancelled else { return }
-            self.fetchFBData()
-            self.openMainVC()
+            
             self.signIntoFirebase()
         }
     }
@@ -101,8 +103,8 @@ extension LoginViewController: LoginButtonDelegate {
                 print("Something went wrong:( ", error)
                 return
             }
-            
-            print("User successfully loged in with Firebase: ", user!)
+            self.fetchFBData()
+            print("User successfully loged in with Firebase: ")
         }
     }
     
@@ -115,7 +117,28 @@ extension LoginViewController: LoginButtonDelegate {
             }
             
             guard let userData = result as? [String: Any] else { return }
+            
+            self.userProfile = UserProfile(data: userData)
             print(userData)
+            print(self.userProfile?.name ?? "nil")
+            self.saveIntoFirebase()
+        }
+    }
+    
+    private func saveIntoFirebase() {
+        let uid = Auth.auth().currentUser?.uid
+        
+        let userData = ["name": userProfile?.name, "email": userProfile?.email]
+        let values = [uid: userData]
+        
+        Database.database().reference().child("users").updateChildValues(values) { error, _ in
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            print("Successfully saved user into Firebase database")
+            self.openMainVC()
         }
     }
     
