@@ -277,10 +277,35 @@
                     <view key="view" contentMode="scaleToFill" id="7Ev-vY-H8i">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged in with Facebook" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U55-Pp-miY">
+                                <rect key="frame" x="107" y="198" width="200" height="57.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="cMB-xs-5yy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="eWG-da-tci">
+                                <rect key="frame" x="188.5" y="208.5" width="37" height="37"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="J91-mf-juc"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eWG-da-tci" firstAttribute="centerX" secondItem="U55-Pp-miY" secondAttribute="centerX" id="4LX-h1-dEV"/>
+                            <constraint firstItem="eWG-da-tci" firstAttribute="centerY" secondItem="U55-Pp-miY" secondAttribute="centerY" id="ORK-Il-PbV"/>
+                            <constraint firstItem="U55-Pp-miY" firstAttribute="centerX" secondItem="J91-mf-juc" secondAttribute="centerX" id="aOU-7M-gdL"/>
+                            <constraint firstItem="U55-Pp-miY" firstAttribute="top" secondItem="J91-mf-juc" secondAttribute="top" constant="150" id="dP0-ag-jol"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="person.fill" catalog="system" id="tie-PG-3SI"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="eWG-da-tci" id="FLH-G6-e5x"/>
+                        <outlet property="userNameLabel" destination="U55-Pp-miY" id="2U2-2w-0iR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jpg-Cr-0dc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -294,7 +319,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="7lY-bc-pce"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zz8-Gc-Wia" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
