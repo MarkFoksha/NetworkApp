@@ -15,6 +15,7 @@ import GoogleSignIn
 class LoginViewController: UIViewController {
     
     var userProfile: UserProfile?
+    var credentials: AuthCredential?
     
     private lazy var fbLoginButton: UIButton = {
         
@@ -152,9 +153,7 @@ extension LoginViewController: LoginButtonDelegate {
             print("Successfully saved user into Firebase database")
             self.openMainVC()
         }
-    }
-    
-    
+    } 
 }
 
 //MARK: - Google sign-in
@@ -179,18 +178,32 @@ extension LoginViewController {
             guard let user = result?.user,
                   let idToken = user.idToken?.tokenString else { return }
             
-            let credentials = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: user.accessToken.tokenString)
-            
-            Auth.auth().signIn(with: credentials) { user, error in
+            if let userName = user.profile?.name, let userEmail = user.profile?.email {
+                let userData = ["name": userName, "email": userEmail]
+                userProfile = UserProfile(data: userData)
                 
-                if let error = error {
-                    print("Failed to log in with Google: ", error)
-                    return
-                }
-                
-                print("Successfully logged into Firebase with Google")
-                self.openMainVC()
+                print(userProfile?.name ?? "Noname")
             }
+            
+            let credentials = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: user.accessToken.tokenString)
+            self.credentials = credentials
+            
+            signIntoFirebaseWithGoogle()
+        }
+    }
+    
+    private func signIntoFirebaseWithGoogle() {
+        guard let credentials = credentials else { return }
+        
+        Auth.auth().signIn(with: credentials) { user, error in
+            
+            if let error = error {
+                print("Failed to log in with Google: ", error)
+                return
+            }
+            
+            print("Successfully logged into Firebase with Google")
+            self.saveIntoFirebase()
         }
     }
 }
