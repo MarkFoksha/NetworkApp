@@ -13,13 +13,15 @@ import GoogleSignIn
 
 class UserProfileVC: UIViewController {
 
-    
+    //Outlets
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    //Properties
     private var provider: String?
     private var currentUser: CurrentUser?
     
+    // Log out button
     private lazy var logOutButton: UIButton = {
         let button = UIButton()
         button.frame = CGRect(x: 32,
@@ -36,8 +38,6 @@ class UserProfileVC: UIViewController {
         return button
     }()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,15 +52,15 @@ class UserProfileVC: UIViewController {
         fetchUserData()
     }
       
+    //Set up log out button
     func setUpButton() {
         view.addSubview(logOutButton)
     }
 }
 
-
-
 extension UserProfileVC {
     
+    //Method that opens LoginVC after log out
     private func openLoginVC() {
         
         do {
@@ -77,6 +77,7 @@ extension UserProfileVC {
         }
     }
     
+    //Method that fetches user's data and inserts needed data in label
     private func fetchUserData() {
         
         if Auth.auth().currentUser != nil {
@@ -94,6 +95,7 @@ extension UserProfileVC {
         
     }
     
+    //Method that handles sign out
     @objc private func signOut() {
         
         if let providerData = Auth.auth().currentUser?.providerData {
@@ -117,6 +119,7 @@ extension UserProfileVC {
         }
     }
     
+    //Method that makes needed greeting based on what provider user is signed in with
     private func getProviderData() -> String {
         var greetings = ""
         
@@ -135,5 +138,4 @@ extension UserProfileVC {
         }
         return greetings
     }
-    
 }

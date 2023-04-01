@@ -14,9 +14,11 @@ import GoogleSignIn
 
 class LoginViewController: UIViewController {
     
+    // Properties
     var userProfile: UserProfile?
     var credentials: AuthCredential?
     
+    // Default Facebook login button
     private lazy var fbLoginButton: UIButton = {
         
         let loginButton = FBLoginButton()
@@ -25,6 +27,7 @@ class LoginViewController: UIViewController {
         return loginButton
     }()
     
+    //Custom Facebook login button
     private lazy var customFbLoginButton: UIButton = {
         
         let customButton = UIButton()
@@ -34,16 +37,32 @@ class LoginViewController: UIViewController {
         customButton.setTitle("Login with Facebook", for: .normal)
         customButton.setTitleColor(.white, for: .normal)
         customButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        customButton.addTarget(self, action: #selector(handleButton), for: .touchUpInside)
+        customButton.addTarget(self, action: #selector(handleCustomFBButton), for: .touchUpInside)
         
         return customButton
     }()
     
+    //Default Google login button
     private lazy var googleLoginButton: GIDSignInButton = {
        
         let loginButton = GIDSignInButton()
         loginButton.frame = CGRect(x: 32, y: 320 + 120, width: view.frame.width - 64, height: 50)
         loginButton.addTarget(self, action: #selector(signInWithGoogle), for: .touchUpInside)
+        return loginButton
+    }()
+    
+    //Custom Google login button
+    private lazy var customGoogleLoginButton: UIButton = {
+       
+        let loginButton = UIButton()
+        loginButton.frame = CGRect(x: 32, y: 320 + 180, width: view.frame.width - 64, height: 50)
+        loginButton.backgroundColor = .white
+        loginButton.setTitle("Login with Google", for: .normal)
+        loginButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        loginButton.setTitleColor(.gray, for: .normal)
+        loginButton.layer.cornerRadius = 4
+        loginButton.addTarget(self, action: #selector(signInWithGoogle), for: .touchUpInside)
+        
         return loginButton
     }()
     
@@ -54,11 +73,13 @@ class LoginViewController: UIViewController {
         setupLoginButtons()
     }
     
+    //Buttons setup
     private func setupLoginButtons() {
         
         view.addSubview(fbLoginButton)
         view.addSubview(customFbLoginButton)
         view.addSubview(googleLoginButton)
+        view.addSubview(customGoogleLoginButton)
     }
 }
 
@@ -66,6 +87,7 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: LoginButtonDelegate {
     
+    //Login handling for default Facebook button
     func loginButton(_ loginButton: FBSDKLoginKit.FBLoginButton, didCompleteWith result: FBSDKLoginKit.LoginManagerLoginResult?, error: Error?) {
         
         if error != nil {
@@ -81,6 +103,7 @@ extension LoginViewController: LoginButtonDelegate {
         self.signIntoFirebase()
     }
     
+    //Logout handling for default Facebook button
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginKit.FBLoginButton) {
         
         print("Did log out from Facebook")
@@ -91,7 +114,8 @@ extension LoginViewController: LoginButtonDelegate {
         dismiss(animated: true)
     }
     
-    @objc private func handleButton() {
+    //Handle custom FB button
+    @objc private func handleCustomFBButton() {
         
         LoginManager().logIn(permissions: ["public_profile", "email"], from: self) { result, error in
             if let error = error {
@@ -105,6 +129,7 @@ extension LoginViewController: LoginButtonDelegate {
         }
     }
     
+    //Sign into Firebase method
     private func signIntoFirebase() {
         let token = AccessToken.current
         guard let tokenString = token?.tokenString else { return }
@@ -121,6 +146,7 @@ extension LoginViewController: LoginButtonDelegate {
         }
     }
     
+    //Fetching FB user's data method
     private func fetchFBData() {
         GraphRequest(graphPath: "me", parameters: ["fields": "id, name, email"]).start { _, result, error in
             
@@ -138,6 +164,7 @@ extension LoginViewController: LoginButtonDelegate {
         }
     }
     
+    //Saving user's data into Firebase method
     private func saveIntoFirebase() {
         let uid = Auth.auth().currentUser?.uid
         
@@ -160,12 +187,15 @@ extension LoginViewController: LoginButtonDelegate {
 
 extension LoginViewController {
     
+    //Handle sign in with Google method
     @objc private func signInWithGoogle() {
         
+        //Handling GID configuration
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
         let config = GIDConfiguration(clientID: clientID)
         GIDSignIn.sharedInstance.configuration = config
         
+        //Sign in completion
         GIDSignIn.sharedInstance.signIn(withPresenting: self) { [unowned self] result, error in
             
             if let error = error {
@@ -185,6 +215,7 @@ extension LoginViewController {
                 print(userProfile?.name ?? "Noname")
             }
             
+            //Making credentials
             let credentials = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: user.accessToken.tokenString)
             self.credentials = credentials
             
@@ -192,6 +223,7 @@ extension LoginViewController {
         }
     }
     
+    // Sign into Firebase for Google method
     private func signIntoFirebaseWithGoogle() {
         guard let credentials = credentials else { return }
         
