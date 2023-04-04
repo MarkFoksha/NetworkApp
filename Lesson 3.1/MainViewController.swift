@@ -198,6 +198,7 @@ extension MainViewController {
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                loginVC.modalPresentationStyle = .fullScreen
                 self.present(loginVC, animated: true)
             }
         }
