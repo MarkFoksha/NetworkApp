@@ -70,6 +70,7 @@ extension UserProfileVC {
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                loginVC.modalPresentationStyle = .fullScreen
                 self.present(loginVC, animated: true)
             }
         } catch let error {
@@ -81,18 +82,25 @@ extension UserProfileVC {
     private func fetchUserData() {
         
         if Auth.auth().currentUser != nil {
-            guard let uid = Auth.auth().currentUser?.uid else { return }
             
-            Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value) { snapshot in
-                guard let userData = snapshot.value as? [String: Any] else { return }
-                self.currentUser = CurrentUser(uid: uid, data: userData)
-                
+            if let userName = Auth.auth().currentUser?.displayName {
                 self.activityIndicator.stopAnimating()
                 self.userNameLabel.isHidden = false
-                self.userNameLabel.text = self.getProviderData()
+                self.userNameLabel.text = self.getProviderData(with: userName)
+            } else {
+                
+                guard let uid = Auth.auth().currentUser?.uid else { return }
+                
+                Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value) { snapshot in
+                    guard let userData = snapshot.value as? [String: Any] else { return }
+                    self.currentUser = CurrentUser(uid: uid, data: userData)
+                    
+                    self.activityIndicator.stopAnimating()
+                    self.userNameLabel.isHidden = false
+                    self.userNameLabel.text = self.getProviderData(with: self.currentUser?.name ?? "Noname")
+                }
             }
         }
-        
     }
     
     //Method that handles sign out
@@ -112,6 +120,10 @@ extension UserProfileVC {
                     GIDSignIn.sharedInstance.signOut()
                     print("User did log out from Google")
                     openLoginVC()
+                case "password":
+                    try! Auth.auth().signOut()
+                    print("User did log out from Email")
+                    openLoginVC()
                 default:
                     print("User is signed in with: ", userInfo.providerID)
                 }
@@ -120,7 +132,7 @@ extension UserProfileVC {
     }
     
     //Method that makes needed greeting based on what provider user is signed in with
-    private func getProviderData() -> String {
+    private func getProviderData(with user: String) -> String {
         var greetings = ""
         
         if let providerData = Auth.auth().currentUser?.providerData {
@@ -130,11 +142,13 @@ extension UserProfileVC {
                     provider = "Facebook"
                 case "google.com":
                     provider = "Google"
+                case "password":
+                    provider = "Email"
                 default:
                     break
                 }
             }
-            greetings = "\(currentUser?.name ?? "Noname") is logged with \(provider!)"
+            greetings = "\(user) is logged with \(provider!)"
         }
         return greetings
     }
