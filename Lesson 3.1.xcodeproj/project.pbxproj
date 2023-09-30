@@ -114,9 +114,22 @@
 		13054E70298E69D90015FD6E /* Lesson 3.1 */ = {
 			isa = PBXGroup;
 			children = (
-				13B1E1C429CC9CF700D87C6C /* Lesson 3.1.entitlements */,
 				13054E71298E69D90015FD6E /* AppDelegate.swift */,
 				13054E73298E69D90015FD6E /* SceneDelegate.swift */,
+				14AFF2052AC8C65200D1F7D4 /* Models */,
+				14AFF2062AC8C68300D1F7D4 /* Controllers */,
+				14AFF2072AC8C69F00D1F7D4 /* Views */,
+				13054E7A298E69DE0015FD6E /* Assets.xcassets */,
+				13B1E1C429CC9CF700D87C6C /* Lesson 3.1.entitlements */,
+				13054E7F298E69DE0015FD6E /* Info.plist */,
+				13E7D55229D31D8D003FCC8A /* GoogleService-Info.plist */,
+			);
+			path = "Lesson 3.1";
+			sourceTree = "<group>";
+		};
+		14AFF2052AC8C65200D1F7D4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
 				131B99E529927DE900035F4C /* NetworkManager.swift */,
 				13201F5D29968397005A0E66 /* AlamofireNetworkRequest.swift */,
 				13DFB6642993F5A600B50D0A /* DataProvider.swift */,
@@ -124,6 +137,13 @@
 				130DAC8329D2F9CF00C0E9EF /* UserProfile.swift */,
 				139C462629D47F6C0080A9FE /* CurrentUser.swift */,
 				13DFB6622993EAB300B50D0A /* ImageProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		14AFF2062AC8C68300D1F7D4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				131B99E12992751900035F4C /* MainViewController.swift */,
 				13B1E1C229CC9C3A00D87C6C /* LoginViewController.swift */,
 				1308200A29DB020E00A31FB1 /* SignInVC.swift */,
@@ -132,16 +152,20 @@
 				13054E85298E7A5A0015FD6E /* ImageViewController.swift */,
 				13054E87298FF06C0015FD6E /* CoursesViewController.swift */,
 				13054E89298FF3100015FD6E /* WebViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		14AFF2072AC8C69F00D1F7D4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				131B99E32992752700035F4C /* CollectionViewCell.swift */,
 				13054E8B298FF3410015FD6E /* TableViewCell.swift */,
 				1346739D29CF97840061CB17 /* Extensions.swift */,
-				13054E77298E69D90015FD6E /* Main.storyboard */,
-				13054E7A298E69DE0015FD6E /* Assets.xcassets */,
 				13054E7C298E69DE0015FD6E /* LaunchScreen.storyboard */,
-				13054E7F298E69DE0015FD6E /* Info.plist */,
-				13E7D55229D31D8D003FCC8A /* GoogleService-Info.plist */,
+				13054E77298E69D90015FD6E /* Main.storyboard */,
 			);
-			path = "Lesson 3.1";
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8B460D0B1130EC183D280421 /* Pods */ = {
